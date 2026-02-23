@@ -123,6 +123,9 @@ class ModelTraining:
     
     def run(self):
         try:
+            mlflow.set_tracking_uri("file:./mlruns")
+            mlflow.set_experiment("mlops-project")
+            
             with mlflow.start_run():
                 logger.info("Starting our Model Training pipeline")
 
