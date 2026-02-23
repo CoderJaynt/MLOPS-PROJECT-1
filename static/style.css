@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Poppins:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Beige Base */
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5e9da;
+    position: relative;
+}
+
+/* Light Rangoli Background Effect */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("https://www.transparenttextures.com/patterns/arabesque.png");
+    opacity: 0.15;
+    z-index: 0;
+}
+
+/* Main Card */
+.container {
+    position: relative;
+    z-index: 2;
+    width: 460px;
+    padding: 45px;
+    border-radius: 20px;
+
+    background: #fffaf3;
+
+    /* Enhanced Floating Shadow */
+    box-shadow:
+        0 10px 25px rgba(90, 50, 20, 0.08),
+        0 25px 60px rgba(90, 50, 20, 0.15);
+
+    border: 1px solid rgba(210, 180, 140, 0.5);
+
+    transition: all 0.4s ease;
+}
+
+/* Soft floor shadow for floating effect */
+.container::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    height: 30px;
+    background: rgba(120, 70, 40, 0.15);
+    filter: blur(18px);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.container:hover {
+    transform: translateY(-6px);
+}
+
+/* Form Layout */
+/* FORM GRID LAYOUT - Royal Two Column */
+/* FORM SECTION - Spacious Heritage Style */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+/* Each input group */
+.form-group {
+    position: relative;
+}
+
+/* Label Styling */
+.form-group label {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 6px;
+    color: #6b3e26;
+    letter-spacing: 0.5px;
+}
+
+/* Input Base */
+input,
+select {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: 1.5px solid #e0c2a5;
+    background-color: #fffdf8;
+    font-size: 15px;
+    transition: all 0.35s ease;
+}
+
+/* Elegant Focus Effect */
+input:focus,
+select:focus {
+    border-color: #a83232;
+    box-shadow: 0 6px 14px rgba(168, 50, 50, 0.12);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+/* Subtle Mehendi-style bottom accent */
+input::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    background: #a83232;
+}
+
+/* Redesigned Predict Button */
+button {
+    margin-top: 15px;
+    padding: 16px;
+    border-radius: 50px;
+    border: none;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+
+    background: linear-gradient(90deg, #a83232, #d2691e);
+    color: white;
+
+    transition: all 0.4s ease;
+}
+
+/* Hover Effect - Royal Lift */
+button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(122, 31, 31, 0.3);
+}
+
+/* Active Press Effect */
+button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
