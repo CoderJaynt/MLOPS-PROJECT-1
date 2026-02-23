@@ -1,7 +1,7 @@
 pipeline{
     agent any
 
-    enviroment{
+    environment{
         VENV_DIR = 'venv'
     }
 
@@ -15,10 +15,10 @@ pipeline{
             }
         }
 
-        stage('Setting up our Vitual enviromentand Installing dependencies'){
+        stage('Setting up our Vitual environment and Installing dependencies'){
             steps{
                 script{
-                    echo 'Setting up our Vitual enviromentand Installing dependencies'
+                    echo 'Setting up our Vitual environment and Installing dependencies'
                     sh '''
                     python -m venv ${VENV_DIR}
                     .${VENV_DIR}/bin/activate
