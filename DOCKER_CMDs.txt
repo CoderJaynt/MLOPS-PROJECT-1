@@ -1,0 +1,35 @@
+********************Cmds for creating docker conatiner********************
+
+docker run -d --name jenkins-dind ^
+--privileged ^
+-p 8080:8080 -p 50000:50000 ^
+-v //var/run/docker.sock:/var/run/docker.sock ^
+-v jenkins_home:/var/jenkins_home ^
+jenkins-dind
+
+*********************Cmds for creating Jenkins container*************************
+
+docker exec -u root -it jenkins-dind bash
+apt update -y
+apt install -y python3
+python3 --version
+ln -s /usr/bin/python3 /usr/bin/python
+python --version
+apt install -y python3-pip
+apt install -y python3-venv
+exit
+
+----------------------------------------- INSTALL GOOGLE CLOUD CLI ON JENKINS CONTAINER ------------------------------------------------
+
+
+---- Come to Terminal( custom_jenkins terminal )
+
+docker exec -u root -it jenkins-dind bash
+apt-get update
+apt-get install -y curl apt-transport-https ca-certificates gnupg
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+echo "deb https://packages.cloud.google.com/apt cloud-sdk main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+
+apt-get update && apt-get install -y google-cloud-sdk
+gcloud --version
+exit
