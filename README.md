@@ -56,35 +56,45 @@ We built a classification system that predicts:
 
 ---
 
-# 🏗️ Complete MLOps Architecture
+---
 
-```mermaid
-flowchart TD
-    A[User Input] --> B[Flask API]
-    B --> C[Docker Container]
-    C --> D[Google Cloud Run]
-    D --> E[ML Model]
-    E --> F[Prediction Output]
+# 🏗️ System Architecture
 
-    G[GCP Bucket] --> H[Data Ingestion]
-    H --> I[Jenkins Pipeline]
-    I --> J[Docker Build]
-    J --> K[GCR]
-    K --> D
-```
+🧑‍💻 **User**  
+⬇  
+🌐 **Flask API**  
+⬇  
+🐳 **Docker Container**  
+⬇  
+☁️ **Google Cloud Run**  
+⬇  
+🤖 **LightGBM Model**  
+⬇  
+📊 **Prediction Output**
 
 ---
-## flowchart LR
-    A[Developer Push Code] --> B[GitHub]
-    B --> C[Jenkins Trigger]
-    C --> D[Create Virtual Environment]
-    D --> E[Install Dependencies]
-    E --> F[Train Model + MLflow]
-    F --> G[Build Docker Image]
-    G --> H[Push to GCR]
-    H --> I[Deploy to Cloud Run]
-    I --> J[Public Endpoint]
 
+# 🔁 MLOps CI/CD Workflow
+
+🔄 **Step 1 – Developer Push Code (GitHub)**  
+⬇  
+🧪 **Step 2 – Jenkins Pipeline Triggered**  
+⬇  
+📦 **Step 3 – Create Virtual Environment**  
+⬇  
+📚 **Step 4 – Install Dependencies**  
+⬇  
+🧠 **Step 5 – Train Model + Log MLflow**  
+⬇  
+🐳 **Step 6 – Build Docker Image**  
+⬇  
+📦 **Step 7 – Push Image to GCR**  
+⬇  
+☁️ **Step 8 – Deploy to Cloud Run**  
+⬇  
+🚀 **Live Public Endpoint Generated**
+
+---
 ## 🔁 CI/CD Stages Breakdown
 ### 1️⃣ Jenkins Setup
 
@@ -216,5 +226,6 @@ Jayant Yadav
 B.Tech 
 MLOps | Machine Learning | Cloud
 
-<p > ⭐ If you like this project, consider giving it a star! </p> ```
+<p > ⭐ If you like this project, consider giving it a star! </p> 
+
 
